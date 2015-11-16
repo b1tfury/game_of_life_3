@@ -3,6 +3,9 @@ module GameOfLife
   #job : A cell is either alive ot dead . Uing its neighbours , cell should know give its status in next generation
 
   class Cell
+
+    attr_reader :state
+
     def initialize(state)
       @state = state
     end
@@ -48,7 +51,7 @@ module GameOfLife
     end
 
     def ==(other)
-      true
+      self.state == other.state
     end
   end
 end
