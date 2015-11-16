@@ -80,6 +80,10 @@ module GameOfLife
       it "should not be compared with something other than cell" do
         expect(cell1).not_to eq(Object.new)
       end
+
+      it "should be equal to itself" do
+        expect(cell1).to eq(cell1)
+      end
     end
   end
 end
