@@ -38,12 +38,10 @@ module GameOfLife
           self
         end
       else
-        if live_count >= 0 && live_count <= 2
-          self
-        elsif live_count == 3
+        if live_count == 3
           @state = 'ALIVE'
           self
-        elsif live_count >= 4 && live_count <= 8
+        else
           self
         end
       end

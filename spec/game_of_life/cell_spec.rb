@@ -57,41 +57,16 @@ module GameOfLife
         end
       end
 
-      it "dead cell should remain dead if 0 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(0)).is_dead?).to eq(true)
-      end
-
-      it "dead cell should remain dead if 1 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(1)).is_dead?).to eq(true)
-      end
-
-      it "dead cell should remain dead if 2 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(2)).is_dead?).to eq(true)
+      [0, 1, 2, 4, 5, 6, 7, 8].each do |number|
+        it "dead cell should remain dead if #{number} neighbours are alive" do
+          expect(cell2.next_generation(build_neighbours(number)).is_dead?).to eq(true)
+        end
       end
 
       it "dead cell should become alive if 3 neighbours are alive" do
         expect(cell2.next_generation(build_neighbours(3)).is_alive?).to eq(true)
       end
 
-      it "dead cell should remain dead if 4 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(4)).is_dead?).to eq(true)
-      end
-
-      it "dead cell should remain dead if 5 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(5)).is_dead?).to eq(true)
-      end
-
-      it "dead cell should remain dead if 6 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(6)).is_dead?).to eq(true)
-      end
-
-      it "dead cell should remain dead if 7 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(7)).is_dead?).to eq(true)
-      end
-
-      it "dead cell should remain dead if 8 neighbours are alive" do
-        expect(cell2.next_generation(build_neighbours(8)).is_dead?).to eq(true)
-      end
     end
   end
 end
