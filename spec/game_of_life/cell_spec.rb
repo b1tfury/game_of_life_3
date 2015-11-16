@@ -5,6 +5,7 @@ module GameOfLife
     let(:cell1) { Cell.new_alive_cell }
     let(:cell2) { Cell.new_dead_cell }
     let(:cell3) { Cell.new_alive_cell }
+    let(:cell4) { Cell.new_alive_cell }
 
     def build_neighbours(live_number)
       neighbours = []
@@ -83,6 +84,10 @@ module GameOfLife
 
       it "should be equal to itself" do
         expect(cell1).to eq(cell1)
+      end
+
+      it "should satisfies transitive property" do
+        expect(cell4 == cell1).to eq(cell4 == cell3)
       end
     end
   end
