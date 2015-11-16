@@ -39,12 +39,10 @@ module GameOfLife
     end
 
     context 'next generation ' do
-      it 'alive cell should die if no neighbour is alive' do
-        expect(cell1.next_generation(build_neighbours(0)).is_dead?).to eq(true)
-      end
-
-      it 'alive cell should die of only one neighbour is alive' do
-        expect(cell1.next_generation(build_neighbours(1)).is_dead?).to eq(true)
+      [0,1].each do |number|
+        it "alive cell should die if #{number} neighbours are`` alive" do
+          expect(cell1.next_generation(build_neighbours(number)).is_dead?).to eq(true)
+        end
       end
     end
   end
