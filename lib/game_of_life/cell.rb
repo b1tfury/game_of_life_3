@@ -19,5 +19,9 @@ module GameOfLife
     def is_dead?
       @state == 'DEAD'
     end
+
+    def next_generation(neighbours)
+      Cell.new_dead_cell
+    end
   end
 end
