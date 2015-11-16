@@ -36,6 +36,9 @@ module GameOfLife
           self
         elsif live_count == 2 || live_count == 3
           self
+        elsif live_count == 4
+          @state = 'DEAD'
+          self
         end
       end
     end
