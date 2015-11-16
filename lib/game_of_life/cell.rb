@@ -43,7 +43,7 @@ module GameOfLife
         elsif live_count == 3
           @state = 'ALIVE'
           self
-        elsif live_count >= 4 && live_count <= 7
+        elsif live_count >= 4 && live_count <= 8
           self
         end
       end
