@@ -31,12 +31,9 @@ module GameOfLife
         end
       end
       if self.is_alive?
-        if live_count < 2
-          @state = 'DEAD'
+        if live_count == 2 || live_count == 3
           self
-        elsif live_count == 2 || live_count == 3
-          self
-        elsif live_count >=4 || live_count <= 8
+        else
           @state = 'DEAD'
           self
         end
