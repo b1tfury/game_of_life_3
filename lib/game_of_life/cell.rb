@@ -1,5 +1,5 @@
 module GameOfLife
-  
+
   #job : A cell is either alive ot dead . Uing its neighbours , cell should know give its status in next generation
 
   class Cell
@@ -24,7 +24,15 @@ module GameOfLife
     end
 
     def next_generation(neighbours)
-      Cell.new_dead_cell
+      live_count  = 0
+      neighbours.each do |cell|
+        if cell.is_alive?
+          live_count += 1
+        end
+      end
+      if self.is_alive? && live_count == 0
+        Cell.new_dead_cell
+      end
     end
   end
 end

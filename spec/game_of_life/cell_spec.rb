@@ -39,7 +39,7 @@ module GameOfLife
     end
 
     context 'next generation ' do
-      it 'alive should die if no neighbour is alive' do
+      it 'alive cell should die if no neighbour is alive' do
         expect(cell1.next_generation(build_neighbours(0)).is_dead?).to eq(true)
       end
     end
