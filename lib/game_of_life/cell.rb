@@ -38,7 +38,7 @@ module GameOfLife
           self
         end
       else
-        if live_count == 0
+        if live_count >= 0 || live_count <= 2
           self
         end
       end
