@@ -30,8 +30,10 @@ module GameOfLife
           live_count += 1
         end
       end
-      if self.is_alive? && live_count == 0
-        Cell.new_dead_cell
+      if self.is_alive?
+        if live_count < 2
+          Cell.new_dead_cell
+        end
       end
     end
   end
