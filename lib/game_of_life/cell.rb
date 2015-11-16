@@ -11,5 +11,9 @@ module GameOfLife
     def is_alive?
       @state == 'ALIVE'
     end
+
+    def is_dead?
+      true
+    end
   end
 end

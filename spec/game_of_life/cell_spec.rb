@@ -13,6 +13,10 @@ module GameOfLife
       it 'dead cell should not be alive' do
         expect(cell2.is_alive?).to eq(false)
       end
+
+      it 'should produce a dead cell also' do
+        expect(cell2.is_dead?).to eq(true)
+      end
     end
   end
 end
