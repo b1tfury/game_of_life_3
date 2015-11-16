@@ -17,7 +17,7 @@ module GameOfLife
     end
 
     def is_dead?
-      true
+      @state == 'DEAD'
     end
   end
 end
