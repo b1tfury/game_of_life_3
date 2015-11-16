@@ -34,7 +34,7 @@ module GameOfLife
         if live_count < 2
           @state = 'DEAD'
           self
-        elsif live_count == 2
+        elsif live_count == 2 || live_count == 3
           self
         end
       end
