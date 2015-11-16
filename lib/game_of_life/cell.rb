@@ -50,6 +50,10 @@ module GameOfLife
       end
     end
 
+    def hash
+      @state.hash
+    end
+
     def ==(other)
       if other.is_a?(self.class)
         self.state == other.state

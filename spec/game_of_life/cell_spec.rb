@@ -69,7 +69,7 @@ module GameOfLife
       end
     end
 
-    context "equality" do
+    context "equality and hash" do
       it "should be equal if state of cells is same" do
         expect(cell1).to eq(cell3)
       end
@@ -88,6 +88,10 @@ module GameOfLife
 
       it "should satisfies transitive property" do
         expect(cell4 == cell1).to eq(cell4 == cell3)
+      end
+
+      it "equal cells should have equal hashes" do
+        expect(cell1.hash).to eq(cell3.hash)
       end
     end
   end
