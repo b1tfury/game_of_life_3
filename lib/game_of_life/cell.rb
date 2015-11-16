@@ -32,7 +32,8 @@ module GameOfLife
       end
       if self.is_alive?
         if live_count < 2
-          Cell.new_dead_cell
+          @state = 'DEAD'
+          self
         end
       end
     end
