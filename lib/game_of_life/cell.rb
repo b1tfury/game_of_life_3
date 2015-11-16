@@ -37,6 +37,10 @@ module GameOfLife
           @state = 'DEAD'
           self
         end
+      else
+        if live_count == 0
+          self
+        end
       end
     end
   end
