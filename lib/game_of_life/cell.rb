@@ -43,6 +43,8 @@ module GameOfLife
         elsif live_count == 3
           @state = 'ALIVE'
           self
+        elsif live_count == 4
+          self
         end
       end
     end
