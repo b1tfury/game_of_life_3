@@ -9,7 +9,7 @@ module GameOfLife
     end
 
     def is_alive?
-      true
+      @state == 'ALIVE'
     end
   end
 end
