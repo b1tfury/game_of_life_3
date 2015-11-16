@@ -1,4 +1,7 @@
 module GameOfLife
+  
+  #job : A cell is either alive ot dead . Uing its neighbours , cell should know give its status in next generation
+
   class Cell
     def initialize(state)
       @state = state
