@@ -12,7 +12,6 @@ module GameOfLife
         neighbours << Cell.new_alive_cell
         live_number -= 1
       end
-
       while dead_number > 0
         neighbours << Cell.new_dead_cell
         dead_number -= 1
@@ -40,25 +39,25 @@ module GameOfLife
 
     context "next generation" do
       [0, 1].each do |number|
-        it "alive cell should die if #{number} neighbours are alive" do
+        it "alive cell should die if #{ number } neighbours are alive" do
           expect(cell1.next_generation(build_neighbours(number)).is_dead?).to eq(true)
         end
       end
 
       [2, 3].each do |number|
-        it "alive cell should stay alive if #{number} neighbours are alive" do
+        it "alive cell should stay alive if #{ number } neighbours are alive" do
           expect(cell1.next_generation(build_neighbours(number)).is_alive?).to eq(true)
         end
       end
 
       [4, 5, 6, 7, 8].each do |number|
-        it "alive cell should die if #{number} neighbours are alive" do
+        it "alive cell should die if #{ number } neighbours are alive" do
           expect(cell1.next_generation(build_neighbours(number)).is_dead?).to eq(true)
         end
       end
 
       [0, 1, 2, 4, 5, 6, 7, 8].each do |number|
-        it "dead cell should remain dead if #{number} neighbours are alive" do
+        it "dead cell should remain dead if #{ number } neighbours are alive" do
           expect(cell2.next_generation(build_neighbours(number)).is_dead?).to eq(true)
         end
       end
@@ -66,7 +65,6 @@ module GameOfLife
       it "dead cell should become alive if 3 neighbours are alive" do
         expect(cell2.next_generation(build_neighbours(3)).is_alive?).to eq(true)
       end
-
     end
   end
 end
