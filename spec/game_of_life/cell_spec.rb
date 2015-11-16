@@ -4,6 +4,7 @@ module GameOfLife
   describe Cell do
     let(:cell1) { Cell.new_alive_cell }
     let(:cell2) { Cell.new_dead_cell }
+    let(:cell3) { Cell.new_alive_cell }
 
     def build_neighbours(live_number)
       neighbours = []
@@ -64,6 +65,12 @@ module GameOfLife
 
       it "dead cell should become alive if 3 neighbours are alive" do
         expect(cell2.next_generation(build_neighbours(3)).is_alive?).to eq(true)
+      end
+    end
+
+    context "equality" do
+      it "should be equal if state of cells is same" do
+        expect(cell1).to eq(cell3)
       end
     end
   end
