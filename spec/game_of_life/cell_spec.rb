@@ -66,6 +66,10 @@ module GameOfLife
       it "alive cell should die if 7 neighbours are alive" do
         expect(cell1.next_generation(build_neighbours(7)).is_dead?).to eq(true)
       end
+
+      it "alive cell should die if 8 neighbours are alive" do
+        expect(cell1.next_generation(build_neighbours(8)).is_dead?).to eq(true)
+      end
     end
   end
 end
