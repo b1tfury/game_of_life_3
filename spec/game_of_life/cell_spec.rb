@@ -20,7 +20,7 @@ module GameOfLife
       neighbours
     end
 
-    context 'birth' do
+    context "birth" do
       it "should produce a alive cell" do
         expect(cell1.is_alive?).to eq(true)
       end
@@ -39,7 +39,7 @@ module GameOfLife
     end
 
     context "next generation" do
-      [0,1].each do |number|
+      [0, 1].each do |number|
         it "alive cell should die if #{number} neighbours are alive" do
           expect(cell1.next_generation(build_neighbours(number)).is_dead?).to eq(true)
         end
