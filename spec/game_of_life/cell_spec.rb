@@ -72,8 +72,13 @@ module GameOfLife
       it "should be equal if state of cells is same" do
         expect(cell1).to eq(cell3)
       end
+
       it "should not be equal if state of cells are not equal" do
         expect(cell1).not_to eq(cell2)
+      end
+
+      it "should not be compared with something other than cell" do
+        expect(cell1).not_to eq(Object.new)
       end
     end
   end

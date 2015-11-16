@@ -51,7 +51,11 @@ module GameOfLife
     end
 
     def ==(other)
-      self.state == other.state
+      if other.is_a?(self.class)
+        self.state == other.state
+      else
+        false
+      end
     end
   end
 end
